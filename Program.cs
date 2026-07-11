@@ -141,24 +141,24 @@
 // reassigning vals breh
 
 using System.ComponentModel;
-
-int[] nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-List<int> new_nums = new();
-for (int i = 0; i < nums.Length; i++)
-{
-    if (!new_nums.Contains(nums[i]))
-    {
-       new_nums.Add(nums[i]);
-    }
-}
-
-foreach (var i in new_nums)
-{
-Console.WriteLine(i);
-    
-}
-
-Console.WriteLine(new_nums.Count);
+//
+// int[] nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+// List<int> new_nums = new();
+// for (int i = 0; i < nums.Length; i++)
+// {
+//     if (!new_nums.Contains(nums[i]))
+//     {
+//        new_nums.Add(nums[i]);
+//     }
+// }
+//
+// foreach (var i in new_nums)
+// {
+// Console.WriteLine(i);
+//     
+// }
+//
+// Console.WriteLine(new_nums.Count);
 
 
 // int k = 0;
@@ -195,6 +195,48 @@ Console.WriteLine(new_nums.Count);
 // {
 //     Console.WriteLine(nums[i]);
 // }
+
+// 20. Valid Parentheses
+// foreach (var i in dict)
+// {
+// Console.WriteLine(i);
+//     
+// }
+
+string s = "{}";
+
+
+Stack<char> my_stack = new();
+
+bool result =true ;
+foreach (char i in s)
+{
+    if (i == '{' || i == '(' || i == '[' )
+    {
+     my_stack.Push(i);   
+    }
+    else
+    {
+        if (my_stack.Count == 0)
+        {
+            result = false;
+        }
+
+        char top = my_stack.Pop();
+        if (i == '}' && top != '{')
+        {
+            result = false;
+        }
+        if (i == ')' && top != '(')
+        {
+            result = false;
+        }if (i == ']' && top != '[')
+        {
+            result = false;
+        }
+
+    }
+}
 
 
 
