@@ -245,34 +245,41 @@ using System.ComponentModel;
 
 // string s = "Oh My!";
 // string s = " Fly me to the moon  ";
+//
+// string s = "b a ";
+// // Console.WriteLine(s.Length);
+// string last_word = "";
+// int lastword_length = 0;
+// for (int i = s.Length - 1; i >= 0; i--)
+// {
+//     Console.WriteLine(s[i]);
+//     char placeholder = s[i];
+//
+//     if (placeholder == ' ')
+//     {
+//         Console.WriteLine("space detected");
+//         if (lastword_length > 0)
+//         {
+//             Console.WriteLine(lastword_length);
+//             return lastword_length;
+//             // break;
+//         }else
+//         {
+//             Console.WriteLine("Skipping first space");
+//         }
+//        
+//     }
+//     else {
+//         
+//         last_word = last_word + placeholder;
+//         lastword_length++;
+//         Console.WriteLine("current: {0}", last_word);
+//     }
+// }
+// Console.Write(lastword_length);
+// return lastword_length;
 
-string s = "b a ";
-// Console.WriteLine(s.Length);
-string last_word = "";
-int lastword_length = 0;
-for (int i = s.Length - 1; i >= 0; i--)
-{
-    Console.WriteLine(s[i]);
-    char placeholder = s[i];
 
-    if (placeholder == ' ' )
-    {
-        Console.WriteLine("space detected");
-        if (lastword_length > 1)
-        {
-            break;
-        }
-       
-    }
-    {
-        
-        last_word = last_word + placeholder;
-        lastword_length++;
-        Console.WriteLine("current: {0}", last_word);
-    }
-}
-Console.Write(lastword_length);
-return lastword_length;
-
+// 
 
 
