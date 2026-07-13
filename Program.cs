@@ -203,40 +203,76 @@ using System.ComponentModel;
 //     
 // }
 
-string s = "{}";
+// string s = "{}";
+//
+//
+// Stack<char> my_stack = new();
+//
+// bool result =true ;
+// foreach (char i in s)
+// {
+//     if (i == '{' || i == '(' || i == '[' )
+//     {
+//      my_stack.Push(i);   
+//     }
+//     else
+//     {
+//         if (my_stack.Count == 0)
+//         {
+//             result = false;
+//         }
+//
+//         char top = my_stack.Pop();
+//         if (i == '}' && top != '{')
+//         {
+//             result = false;
+//         }
+//         if (i == ')' && top != '(')
+//         {
+//             result = false;
+//         }if (i == ']' && top != '[')
+//         {
+//             result = false;
+//         }
+//
+//     }
+// }
+//
+//
 
 
-Stack<char> my_stack = new();
+// length of last word
 
-bool result =true ;
-foreach (char i in s)
+// string s = "Oh My!";
+// string s = " Fly me to the moon  ";
+
+string s = "b a ";
+// Console.WriteLine(s.Length);
+string last_word = "";
+int lastword_length = 0;
+for (int i = s.Length - 1; i >= 0; i--)
 {
-    if (i == '{' || i == '(' || i == '[' )
+    Console.WriteLine(s[i]);
+    char placeholder = s[i];
+
+    if (placeholder == ' ' )
     {
-     my_stack.Push(i);   
+        Console.WriteLine("space detected");
+        if (lastword_length > 1)
+        {
+            break;
+        }
+       
     }
-    else
     {
-        if (my_stack.Count == 0)
-        {
-            result = false;
-        }
-
-        char top = my_stack.Pop();
-        if (i == '}' && top != '{')
-        {
-            result = false;
-        }
-        if (i == ')' && top != '(')
-        {
-            result = false;
-        }if (i == ']' && top != '[')
-        {
-            result = false;
-        }
-
+        
+        last_word = last_word + placeholder;
+        lastword_length++;
+        Console.WriteLine("current: {0}", last_word);
     }
 }
+Console.Write(lastword_length);
+return lastword_length;
 
 
 
