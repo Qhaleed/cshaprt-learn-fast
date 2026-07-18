@@ -141,6 +141,8 @@
 // reassigning vals breh
 
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+
 //
 // int[] nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 // List<int> new_nums = new();
@@ -280,6 +282,238 @@ using System.ComponentModel;
 // return lastword_length;
 
 
+// 50. Pow(x, n) 
+// Medium Problem
+
+//Example 1:
 // 
+// Input: x = 2.00000, n = 10
+// Output: 1024.00000
+
+// double x = 2.00000;
+// int n = -2;
+//
+// // just raise power?
+//
+// // what happens if n is negative?
+// double current = 0;
+// double inverted = Math.Abs(n);
+// double result;
+// if (n < 0)
+// {
+//  for (int i = 0; i < inverted; i++) current = x;
+//  {
+//   if (current == 0)
+//   {
+//    current = x;
+//   }
+//   current = current * x;
+//   // then get its reciprocal
+//   result = 1 / inverted;
+//   Console.WriteLine("result: {0}", result);
+//   
+//  }
+//
+//  // Console.WriteLine(current);
+//  // return current;
+//
+// }
+// else
+// {
+// for (int i = 0; i < n; i++)
+//  {
+//   // current = x;
+//   if (current == 0)
+//   {
+//    current = x;
+//   }
+//   else
+//   {
+//    current = current * x;
+//    Console.WriteLine("{0} * {0}", x);
+//    Console.WriteLine(current);
+//   }
+//  
+//  
+//  }
+//  
+// }
+
+
+// letter combination of a phone number
+
+// 2  -> abc
+// 3 -> def
+// 4 -> ghi
+// 5 -> jkl
+// 6 -> mno
+// 7 -> pqrs
+// 8 ->  tuv
+// 9 ->  wxyz
+// string digits = "23";
+// Dictionary<int, List<string>> dictionary = new();
+// dictionary[0] = new List<string> { "a", "b", "c" };
+// dictionary[1] = new List<string> { "d", "e", "f" };
+// dictionary[2] = new List<string> { "g", "h", "i" };
+// dictionary[3] = new List<string> { "j", "k", "l" };
+// dictionary[4] = new List<string> { "m", "n", "o" };
+// dictionary[5] = new List<string> { "p", "q", "r", "s" };
+// dictionary[6] = new List<string> { "t", "u", "v" };
+// dictionary[7] = new List<string> { "w", "x", "y", "z" };
+//
+// for (int i = 0; i < dictionary.Count; i++)
+// {
+//     for (int j = 0; j < 4; j++)
+//     {
+//         Console.WriteLine(dictionary[i][j]);
+//     }
+// }
+//
+
+// Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+//
+//     Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+//
+// Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
+//     Return k.
+//     Custom Judge:
+//
+// The judge will test your solution with the following code:
+//
+// int[] nums = [...]; // Input array
+// int val = ...; // Value to remove
+// int[] expectedNums = [...]; // The expected answer with correct length.
+// // It is sorted with no values equaling val.
+//
+// int k = removeElement(nums, val); // Calls your implementation
+//
+// assert k == expectedNums.length;
+// sort(nums, 0, k); // Sort the first k elements of nums
+// for (int i = 0; i < actualLength; i++) {
+//     assert nums[i] == expectedNums[i];
+// }
+
+// Sample output
+// Input: nums = [3,2,2,3], val = 3
+// Output: 2, nums = [2,2,_,_]
+// Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+//     It does not matter what you leave beyond the returned k (hence they are underscores).
+//
+
+
+
+// int[] nums = [3, 2, 2, 3];
+
+int[] nums = [3,2,2,3];
+// int val = 2;
+// int[] result = nums;
+// int counter = 0;
+// Array.Sort(nums);
+//
+// for (int i = 0; i < nums.Length; i++)
+// {
+//     for (int j = i + 1; j < nums.Length; j++)
+//     {
+//         if (nums[i] == val)
+//         {
+//             int temp = nums[i];
+//             nums[i] = nums[j];
+//             nums[j] = temp;
+//         }
+//     }
+// }
+//
+//
+// for (int i = 0; i < nums.Length; i++)
+// {
+//     
+//     if (nums[i] == val)
+//     {
+//         break;
+//     }
+//     else
+//     {
+//         counter++;
+//     }
+// }
+//
+// foreach (var items  in nums)
+// {
+//     Console.WriteLine(items);
+//     
+// }
+// Console.WriteLine(counter);
+
+
+
+
+
+
+
+
+
+//
+// Given two strings needle and haystack, return the index of the 
+//     first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+//
+//  
+//
+//     Example 1:
+//
+// Input: haystack = "sadbutsad", needle = "sad"
+// Output: 0
+// Explanation: "sad" occurs at index 0 and 6.
+//     The first occurrence is at index 0, so we return 0.
+//     Example 2:
+//
+// Input: haystack = "leetcode", needle = "leeto"
+// Output: -1
+// Explanation: "leeto" did not occur in "leetcode", so we return -1.
+
+
+
+
+
+
+string haystack = "sadbutsad";
+string needle = "sad";
+bool found = false;
+int index_holder = 0;
+int needle_head = needle[0];
+for (int i = 0; i < haystack.Length; i++)
+{
+    if (haystack[i] ==needle_head)
+    {
+        index_holder = i;
+        int correct_counter = 0;
+        for (int j = 0; j < needle.Length; j++)
+        {
+            if (haystack[i] != needle[j])
+            {
+                Console.WriteLine("they aint the same");
+                break;
+            }
+            else
+            {
+                correct_counter++;
+            }
+
+            if (correct_counter == needle.Length)
+            {
+                Console.WriteLine("This is it! @ index: {0}", i);
+            }
+        }
+    }
+    
+    // Console.WriteLine(haystack[i]);
+}
+// Console.WriteLine("return -1");
+
+
+
+
+
+
+
 
 
